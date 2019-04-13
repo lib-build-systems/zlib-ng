@@ -45,8 +45,7 @@ set(INSTALL_BIN_DIR "${CMAKE_INSTALL_PREFIX}/bin" CACHE PATH "Installation direc
 set(INSTALL_LIB_DIR "${CMAKE_INSTALL_PREFIX}/lib" CACHE PATH "Installation directory for libraries")
 set(INSTALL_INC_DIR "${CMAKE_INSTALL_PREFIX}/include" CACHE PATH "Installation directory for headers")
 set(INSTALL_MAN_DIR "${CMAKE_INSTALL_PREFIX}/share/man" CACHE PATH "Installation directory for manual pages")
-set(INSTALL_CMAKE_DIR "${CMAKE_INSTALL_PREFIX}/share/cmake" CACHE PATH "Installation directory for cmake config (.cmake) files")
-set(INSTALL_PKGCONFIG_DIR "${CMAKE_INSTALL_PREFIX}/share/pkgconfig" CACHE PATH "Installation directory for pkgconfig (.pc) files")
+set(INSTALL_CFG_DIR "${CMAKE_INSTALL_PREFIX}/lib/cmake/zlib" CACHE PATH "Installation directory for import (.cmake and .pc) files")
 
 include(CheckTypeSize)
 include(CheckSymbolExists)
@@ -839,7 +838,7 @@ if (NOT SKIP_INSTALL_LIBRARIES AND NOT SKIP_INSTALL_ALL )
             RUNTIME DESTINATION "${INSTALL_BIN_DIR}"
             ARCHIVE DESTINATION "${INSTALL_LIB_DIR}"
             LIBRARY DESTINATION "${INSTALL_LIB_DIR}" )
-    install(EXPORT zlib DESTINATION "${INSTALL_CMAKE_DIR}")
+    install(EXPORT zlib DESTINATION "${INSTALL_CFG_DIR}")
 endif ()
 
 if (NOT SKIP_INSTALL_HEADERS AND NOT SKIP_INSTALL_ALL )
@@ -849,7 +848,7 @@ endif ()
 
 if (NOT SKIP_INSTALL_FILES AND NOT SKIP_INSTALL_ALL )
     install(FILES zlib.3 DESTINATION "${INSTALL_MAN_DIR}/man3" RENAME zlib${SUFFIX}.3)
-    install(FILES ${ZLIB_PC} DESTINATION "${INSTALL_PKGCONFIG_DIR}")
+    install(FILES ${ZLIB_PC} DESTINATION "${INSTALL_CFG_DIR}")
 endif ()
 
 #============================================================================
