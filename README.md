@@ -14,12 +14,12 @@ Each branch in a repository defines a specific build system for a specific versi
 Yes please! I already have my hands full on creating a consistent cross-platform CMake experience for the libraries already included. If you have improvements or ready-and-tested config files for other build systems, don't hesitate to create pull requests per build system, per version.
 
 # zlib-ng
-Added CMakeLists.txt file for zlib version 1.2.11
+Added CMakeLists.txt file for zlib-ng 'develop' version.
 * CMAKE_DEBUG_POSTFIX should be provided by the caller of the cmake script
 * Default installation paths:
   * <CMAKE_INSTALL_PREFIX>/include (.h, .hpp)
   * <CMAKE_INSTALL_PREFIX>/share/man (.1, .3, .5)
   * <CMAKE_INSTALL_PREFIX>/bin (.exe, .dll)
   * <CMAKE_INSTALL_PREFIX>/lib (.so, .lib)
-  * <CMAKE_INSTALL_PREFIX>/lib/cmake/\<libname\> (.cmake, .pc) 
+  * <CMAKE_INSTALL_PREFIX>/lib/cmake/zlib (.cmake, .pc) 
   
