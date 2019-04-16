@@ -834,11 +834,11 @@ endif ()
 
 if (NOT SKIP_INSTALL_LIBRARIES AND NOT SKIP_INSTALL_ALL )
     install(TARGETS zlib zlibstatic
-            EXPORT zlib 
+            EXPORT zlib-targets 
             RUNTIME DESTINATION "${INSTALL_BIN_DIR}"
             ARCHIVE DESTINATION "${INSTALL_LIB_DIR}"
             LIBRARY DESTINATION "${INSTALL_LIB_DIR}" )
-    install(EXPORT zlib DESTINATION "${INSTALL_CFG_DIR}")
+    install(EXPORT zlib-targets DESTINATION "${INSTALL_CFG_DIR}")
 endif ()
 
 if (NOT SKIP_INSTALL_HEADERS AND NOT SKIP_INSTALL_ALL )
